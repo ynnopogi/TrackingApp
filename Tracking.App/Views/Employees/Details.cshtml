@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+@model Tracking.Common.ViewModels.EmployeeViewModel
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+{
+    @Html.Raw($"<h1 class=\"unauthorize\">{ViewBag.Message}</h1>")
+}
+else
+{
+    <div class="container">
+        <h3>Delete Employee?</h3>
+        <hr />
+        <br />
+        <form class="col-md-6 offset-3" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+            <input asp-for="Id" type="hidden" />
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                : <strong>@Model.FirstName</strong>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                : <strong>@Model.LastName</strong>
+            </div>
+            <div class="form-group">
+                <label asp-for="Active"></label>
+                : <strong>@Model.Active</strong>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ClockIn"></label>
+                : <strong>@Model.ClockIn</strong>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClockOut"></label>
+                : <strong>@Model.ClockOut</strong>
+            </div>
+            <br />
+            <div class="form-group text-right">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a class="btn btn-default" asp-action="Index">Cancel</a>
+            </div>
+        </form>
+    </div>
+}

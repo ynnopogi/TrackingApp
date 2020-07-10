@@ -1,0 +1,34 @@
+﻿@model Tracking.Common.Models.AuthenticateRequest
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="global-container">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Log in to Tracking App!</h3>
+            <div class="card-text">
+                <form role="form" asp-route-returnurl="@ViewData["ReturnUrl"]" class="custom-form" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="Username">Username</label>
+                        <input class="form-control" type="text" placeholder="Email Address" asp-for="Username" autofocus />
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" asp-for="Password">Password</label>
+                        <input class="form-control" asp-for="Password" type="password" placeholder="Password" required />
+                    </div>
+                    <button type="submit" class="btn btn-signin btn-block">Sign in</button>
+
+                    <div class="sign-up">
+                        Don't have an account? <a href="#">Create One</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

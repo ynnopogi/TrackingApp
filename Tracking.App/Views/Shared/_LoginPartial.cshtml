@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var username = HttpContextAccessor.HttpContext.Session.GetString("username");
+}
+    <ul class="navbar-nav">
+        @if (!string.IsNullOrWhiteSpace(HttpContextAccessor.HttpContext.Session.GetString("access_token")))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Hello @username!</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" asp-area="" asp-controller="Logout" asp-action="Index">Logout</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+            </li>
+        }
+    </ul>

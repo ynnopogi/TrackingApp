@@ -1,0 +1,208 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #f5f5f5;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.main-header {
+    background-color: #ffbf00;
+    color: #fff !important;
+}
+
+.wrapper {
+    position: absolute;
+    background-image: url(https://raw.githubusercontent.com/erenesto/vue-weather-app/master/src/assets/images/snow.jpg);
+    top: 57px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: #444;
+    background-blend-mode: overlay;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+    .coming-soon h1 {
+        display: inline-block;
+        font-size: 52px;
+        border: 5px solid #000;
+        padding: 8px 40px;
+        color: #ffd905;
+        animation: text-animation 3s ease-in-out forwards;
+    }
+
+    .coming-soon .ctdown {
+        font-weight: 700;
+        font-size: 42px;
+        display: flex;
+        justify-content: center;
+        min-height: 160px;
+        opacity: 0;
+        transition: opacity 3s ease-in-out;
+    }
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    color: #ffd905;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0, 0.7);
+    width: 160px;
+    height: 160px;
+}
+
+    .time-box:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .time-box span {
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+@keyframes text-animation {
+    from {
+        transform: scale(0) rotateY(0deg);
+    }
+
+    to {
+        transform: scale(1) rotateY(720deg);
+    }
+}
+
+.global-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-form {
+    padding-top: 10px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.card-title {
+    color: #ffc107;
+    font-weight: 400;
+}
+
+.btn-signin {
+    color: #fff !important;
+    font-size: 14px;
+    margin-top: 20px;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+
+.login-form {
+    width: 350px;
+    margin: 80px;
+}
+
+.sign-up {
+    text-align: center;
+    padding: 20px 0 0;
+}
+
+.alert {
+    margin-bottom: -30px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+.unauthorize {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+    .unauthorize h1 {
+        display: inline-block;
+        font-size: 52px;
+        border: 5px solid #ffd905;
+        padding: 8px 40px;
+        color: #ee6117;
+        animation: text-animation 3s ease-in-out forwards;
+    }

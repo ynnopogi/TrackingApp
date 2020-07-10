@@ -1,0 +1,64 @@
+﻿@model List<Tracking.Common.ViewModels.EmployeeViewModel>
+@{
+    ViewData["Title"] = "Employees";
+}
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+{
+    <div class="unauthorize">@Html.Raw($"<h1>{ViewBag.Message}</h1>")</div>
+}
+else
+{
+    <div class="container">
+        <h3 class="float-left">Manage Employees</h3>
+        <br />
+        <div class="float-right">
+            <a asp-action="Create" class="btn mb-2">Add New</a>
+        </div>
+        <div class="text-break"></div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Clock in</th>
+                    <th scope="col">Clock out</th>
+                    <th class="text-center" scope="col">Active?</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td scope="row">@item.Id</td>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.ClockIn</td>
+                            <td>@item.ClockOut</td>
+                            <td class="text-center">
+                                @if (item.Active) {
+                                    <span>Yes</span>
+                                }
+                                else
+                                {
+                                    <span>No</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.FullName != "John Doe")
+                                {
+                                    <a class="btn btn-primary btn-sm" asp-area="" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                    <a class="btn btn-danger btn-sm" asp-area="" asp-action="Details" asp-route-id="@item.Id">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+}
