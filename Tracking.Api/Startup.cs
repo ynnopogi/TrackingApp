@@ -144,7 +144,7 @@ namespace Tracking.Api
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Website Builder API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tracking App API V1");
                 c.RoutePrefix = string.Empty;
             });
 
