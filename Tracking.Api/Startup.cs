@@ -39,7 +39,7 @@ namespace Tracking.Api
             IConfigurationSection appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
-            // configure jwt authentication
+            // Configure JWT Authentication
             AppSettings appSettings = appSettingsSection.Get<AppSettings>();
             byte[] key = Encoding.ASCII.GetBytes(appSettings.Secret);
 
@@ -72,7 +72,7 @@ namespace Tracking.Api
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Charlie Raffay",
+                        Name = "Rizalino Jose",
                         Email = "ynnopogi@gmail.com",
                         Url = new Uri("https://example.com")
                     }
